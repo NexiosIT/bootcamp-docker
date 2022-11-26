@@ -3,7 +3,7 @@ Complex docker setup can turn into multiple very long commands.
 ```yaml
 version: '3.1'
 services:
-  some-postgres:
+  my-postgres:
     image: postgres
     environment:
       POSTGRES_PASSWORD: mysecretpassword

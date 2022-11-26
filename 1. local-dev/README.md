@@ -4,7 +4,7 @@ Tejas Kumar @ BeJS: https://youtu.be/liwC7W-uWnY
 I need a database real quick but don't want to install anything!  
 https://hub.docker.com/_/postgres  
 ```bash
-docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword postgres
+docker run --name my-postgres --rm -e POSTGRES_PASSWORD=mysecretpassword postgres
 docker ps
 ```
 
@@ -25,12 +25,14 @@ RETURNING *;
 
 Where is my data?  
 ```bash
-docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -v ./postgres-data:/var/lib/postgresql/data postgres
+docker run --name my-postgres --rm -e POSTGRES_PASSWORD=mysecretpassword -v /tmp/postgres-data:/var/lib/postgresql/data postgres
 ```
 
+## Network
 How do we access this from outside container?  
+FIRST! docker-compose, because these commands are getting too long
 ```bash
-docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -v ./postgres-data:/var/lib/postgresql/data -p 5432:5432 postgres
+docker run --name my-postgres --rm -e POSTGRES_PASSWORD=mysecretpassword -v ./postgres-data:/var/lib/postgresql/data -p 5432:5432 postgres
 ```
 
 ## Express.js in action
