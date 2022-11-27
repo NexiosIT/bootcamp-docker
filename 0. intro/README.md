@@ -6,7 +6,7 @@ Make sure everyone can run `docker run hello-world`
 ## What is Docker
 Amazon: https://aws.amazon.com/docker/  
 ### As a developer
-Reproducable, lightweight containers that allows applications to think they're home alone.  
+Reproducible, lightweight containers that allows applications to think they're home alone.  
 Move from "it works on my machine" to "it works in the container".  
 ### As a sysadmin
 Similar to VMs, but OS layer is shared.  
@@ -56,15 +56,8 @@ Note that name resolution only works with explicitly named containers.
 That's all fine, but how do I change the content?  
 ```bash
 mkdir nginx-content
-nano nginx-content/index.html
+echo "<html><body><h1>Hello from nginx-content</h1></body></html>" > nginx-content/index.html
 docker run -p 80:80 -v $(pwd)/nginx-content:/usr/share/nginx/html -d nginx
-```
-```html
-<html>
-<body>
-  <h1>Hello World!</h1>
-</body>
-</html>
 ```
 You can also work with volumes. Like folders, but managed by docker.  
 ```bash
