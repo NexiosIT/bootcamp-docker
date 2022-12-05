@@ -3,6 +3,9 @@ Tejas Kumar @ BeJS: https://youtu.be/liwC7W-uWnY
 ## Postgres
 I need a database real quick but don't want to install anything!  
 https://hub.docker.com/_/postgres
+```bash
+docker-compose up -d
+```
 
 ## SpringBoot in action
 https://start.spring.io/  

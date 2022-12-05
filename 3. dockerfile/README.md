@@ -9,7 +9,7 @@ Reference: https://docs.docker.com/engine/reference/builder/
 Example: https://github.com/docker/awesome-compose/tree/master/react-express-mysql  
 
 ## Production grade
-In production you want to run static sources with a webserver (apache, nginx, ...).  
+In production, you want to run static sources with a webserver (apache, nginx, ...).  
 You could first build and then make a dockerfile that serves the build folder with nginx.  
 ```bash
 npm install
