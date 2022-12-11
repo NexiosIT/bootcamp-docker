@@ -1,0 +1,7 @@
+FROM nginx
+# Nginx serves files in this directory
+WORKDIR /usr/share/nginx/html
+# Remove example files
+RUN rm -rf ./*
+COPY build .
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
